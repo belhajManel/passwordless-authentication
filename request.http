@@ -1,0 +1,16 @@
+### token can be obtained from the response of the login request
+
+@token= ""
+### Login
+POST http://localhost:3000/auth/login/
+Content-Type: application/json
+
+{
+    "destination": "mambo@email.com"
+}
+
+### Magic Link
+GET http://localhost:3000/auth/login/callback?token={{token}}
+
+### Accessing protected routes
+GET http://localhost:3000/protected
